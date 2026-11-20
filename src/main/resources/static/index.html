@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Smart Planner</title>
+  <link rel="icon" type="image/png" href="Icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Smart Planner</h1>
+  </header>
+
+  <main class="board">
+    <section class="column" aria-labelledby="scheduled-title">
+      <h2 id="scheduled-title" class="column-title">Scheduled</h2>
+      <div id="scheduled" class="scroll"></div>
+    </section>
+    <section class="column" aria-labelledby="todo-title">
+      <h2 id="todo-title" class="column-title">To do</h2>
+      <div id="todo" class="scroll"></div>
+    </section>
+  </main>
+
+  <footer class="dock">
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <form id="composer" class="composer">
+      <input id="composer-input" type="text" autocomplete="off" aria-label="Add to your agenda"
+        placeholder="Add something, e.g. “Dentist next Tuesday at 3pm for 1 hour”">
+      <button id="send" class="btn" type="submit">Add</button>
+    </form>
+  </footer>
+
+  <dialog id="editor" aria-labelledby="editor-title">
+    <form id="edit-form">
+      <h2 id="editor-title">Edit item</h2>
+      <label>Title
+        <input name="title" required autocomplete="off">
+      </label>
+      <div class="row">
+        <label>Type
+          <select name="type">
+            <option value="ACTIVITY">Activity</option>
+            <option value="GOAL">Goal</option>
+            <option value="COMMITMENT">Commitment</option>
+          </select>
+        </label>
+        <label>Priority
+          <select name="priority">
+            <option value="LOW">Low</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="HIGH">High</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>Date
+          <input name="date" type="date">
+        </label>
+        <label>Time
+          <input name="time" type="time">
+        </label>
+      </div>
+      <label>Duration (minutes)
+        <input name="duration" type="number" min="1" step="1" inputmode="numeric">
+      </label>
+      <label>Notes
+        <textarea name="notes" rows="3"></textarea>
+      </label>
+      <p id="editor-status" class="status" role="status" aria-live="polite"></p>
+      <div class="actions">
+        <button id="delete" class="btn ghost" type="button">Delete</button>
+        <span class="spacer"></span>
+        <button id="cancel" class="btn ghost" type="button">Cancel</button>
+        <button id="save" class="btn" type="submit">Save</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+
+</html>
