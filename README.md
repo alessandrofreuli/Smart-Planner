@@ -65,7 +65,7 @@ Smart-Planner/
 
 ## Installation
 
-Requires **Java 21**, **Maven**, a running **PostgreSQL** server and [**llama.cpp**](https://github.com/ggml-org/llama.cpp) with a chat model in GGUF format.
+Requires **Java 21**, **Maven**, a running **PostgreSQL** server and [**llama.cpp**] with a chat model in GGUF format.
 
 ```bash
 git clone https://github.com/alessandrofreuli/Smart-Planner.git
